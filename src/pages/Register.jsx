@@ -6,7 +6,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [profileImage, setProfileImage] = useState(null);
   const [name, setName] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState(''); 
 
 const handleImageChange = (e) => {
   setProfileImage(e.target.files[0]);
