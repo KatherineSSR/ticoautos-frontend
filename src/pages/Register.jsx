@@ -2,14 +2,16 @@ import { useState } from "react";
 import api from "../services/api";
 
 function Register() {
+  //declaramos variables de estado
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [profileImage, setProfileImage] = useState(null);
   const [message, setMessage] = useState("");
 
+  //función para manejar el envío del formulario
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); //evitamos que el formulario se recargue al enviar
 
     try {
       const formData = new FormData();
