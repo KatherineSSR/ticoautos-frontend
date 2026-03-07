@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
-import "../styles/Auth.css";
+import "./Auth.css";
 
 function Auth() {
   const [isActive, setIsActive] = useState(false);
