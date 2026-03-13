@@ -24,13 +24,13 @@ function Register() {
       const response = await api.post("/auth/register", formData);
 
       if (response.status === 201) {
-        setMessage("Usuario registrado exitosamente"); //MODIFICAR LOS MENSAJES
+        setMessage("User registered successfully"); 
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        setMessage("Username ya existe o faltan datos");
+        setMessage("Username already exists or missing data");
       } else {
-        setMessage("Error en el servidor");
+        setMessage("Server error");
       }
     }
   };

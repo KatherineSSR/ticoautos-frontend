@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
-import "./Auth.css";
+import '../styles/Auth.css';
 
 function Auth() {
   const [isActive, setIsActive] = useState(false);
@@ -21,7 +21,7 @@ function Auth() {
         <div className="toggle-container"> {/* Contenedor para los paneles de bienvenida */}
           <div className="toggle">
             <div className="toggle-panel toggle-left">
-              <h1>Welcome Back!</h1>
+              <h1>Welcome to TicoAutos</h1>
               <p>Already have an account?</p>
               <button
                 type="button"
@@ -33,7 +33,7 @@ function Auth() {
             </div>
 
             <div className="toggle-panel toggle-right"> {/* Panel derecho con mensaje de bienvenida para nuevos usuarios */}
-              <h1>Hello Friend!</h1>
+              <h1>Welcome back</h1>
               <p>Don't have an account?</p>
               <button
                 type="button"
