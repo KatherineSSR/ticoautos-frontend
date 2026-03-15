@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #161515;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .page-wrapper {
   background-color: #161515;
   min-height: 100vh;
@@ -56,14 +67,14 @@
   transition: color 0.2s;
 }
 .simple-navbar a:hover, .simple-navbar button:hover {
-  color:#8B0000;
+  color: #8B0000;
 }
 
 .simple-filter-bar {
-  background:  #000000;
+  background: #000000;
   border-radius: 8px;
   padding: 36px 24px;
-  margin: 32px auto 24px auto;
+  margin:  32px auto 24px auto;
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -97,17 +108,8 @@
   justify-content: center;
   margin-top: 32px;
 }
-.simple-card {
-  background:  #000000;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px  #000000;
-  color: #fff;
-  width: 260px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
+/* Mantengo SOLO UNA definición de .simple-card (la más completa) */
 .simple-card {
   background: #000000;
   border-radius: 16px;
@@ -162,7 +164,6 @@
   margin-bottom: 4px;
 }
 
-
 .simple-card .card-actions {
   display: flex;
   gap: 10px;
@@ -180,7 +181,6 @@
 }
 .simple-card .card-actions button:hover {
   background: #8B0000;
-
 }
 
 .simple-pagination {
@@ -201,7 +201,6 @@
   cursor: pointer;
 }
 
-.s
 .simple-pagination button:disabled {
   background: #444;
   color: #bbb;

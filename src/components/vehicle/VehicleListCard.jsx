@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Simple.css';
+import '../../styles/vehicle.css';
 
-const VehicleListCard = ({ vehicle, onCopyUrl }) => {
+const VehicleListCard = ({ vehicle, onCopyUrl, question }) => {
   const navigate = useNavigate();
 
   const handleDetail = () => {
@@ -19,6 +19,7 @@ const VehicleListCard = ({ vehicle, onCopyUrl }) => {
       <div className="card-actions">
         <button onClick={handleDetail}>Details</button>
         <button onClick={() => onCopyUrl(vehicle._id)}>Share</button>
+        <button onClick={() => question(vehicle)}>Question</button>
       </div>
     </div>
   );

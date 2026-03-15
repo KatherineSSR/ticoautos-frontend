@@ -1,6 +1,6 @@
 import React from "react";
 import api from "../services/api";
-import VehicleForm from "../components/VehicleForm";
+import VehicleForm from "../components/vehicle/VehicleForm";
 
 function AddVehicle() {
   // Función para manejar el registro

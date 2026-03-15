@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/Simple.css';
+import "../../styles/vehicle.css";
 
 const Navbar = ({ isAuthenticated }) => {
   const navigate = useNavigate();
@@ -14,6 +14,8 @@ const Navbar = ({ isAuthenticated }) => {
     <nav className="simple-navbar">
       <Link to="/" style={{ fontWeight: 700, fontSize: 22, color: '#fff', textDecoration: 'none' }}>TicoAutos</Link>
       <ul>
+        {isAuthenticated && <li><Link to="/my-inbox">Mi Inbox</Link></li>}
+        {isAuthenticated && <li><Link to="/my-questions">My Questions</Link></li>}
         {isAuthenticated && <li><Link to="/my-vehicles">My Vehicles</Link></li>}
         {isAuthenticated && <li><Link to="/add-vehicle">Register Vehicle</Link></li>}
         {!isAuthenticated && <li><Link to="/auth">Login/Register</Link></li>}

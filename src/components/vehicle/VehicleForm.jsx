@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../styles/Simple.css';
+import '../../styles/vehicle.css';
 
 function VehicleForm({ initialData = {}, onSubmit, submitLabel }) {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function VehicleForm({ initialData = {}, onSubmit, submitLabel }) {
     formData.append("year", year);
     formData.append("price", price);
     formData.append("description", description);
-    // Si es edición, usar el estado seleccionado; si es registro, siempre 'available'
+    // Si es edición, usar el estado seleccionado: si es registro available
     if (initialData && initialData.brand) {
       formData.append("status", status);
     } else {

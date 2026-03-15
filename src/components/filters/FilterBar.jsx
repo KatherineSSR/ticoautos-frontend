@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Simple.css';
+import '../../styles/vehicle.css';
 
 const FilterBar = ({ onFilter }) => {
   const [filters, setFilters] = useState({

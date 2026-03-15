@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import FilterBar from "../components/FilterBar";
-import VehicleListCard from "../components/VehicleListCard";
-import Navbar from "../components/Navbar";
+import FilterBar from "../components/filters/FilterBar";
+import VehicleListCard from "../components/vehicle/VehicleListCard";
+import Navbar from "../components/layout/Navbar";
+import QuestionModal from "../components/chat/QuestionModal";
 import api from "../services/api";
-import '../styles/Simple.css';
+import '../styles/vehicle.css';
 
 function Home() {
   const [vehicles, setVehicles] = useState([]);
@@ -11,6 +12,9 @@ function Home() {
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [filters, setFilters] = useState({});
+
+  //Toma al vehículo seleccionado para preguntas 
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
 
   // Detecta si el usuario está autenticado
   const isAuthenticated = !!sessionStorage.getItem("token");
@@ -45,6 +49,16 @@ function Home() {
     alert('Vehicle URL copied!');
   };
 
+  // Abrimos el modal de preguntas para el vehículo seleccionado
+  const handleOpenQuestions = (vehicle) => {
+    const token = sessionStorage.getItem("token");
+    if (!token) {
+      alert("Debes iniciar sesión para hacer preguntas.");
+      return;
+    }
+    setSelectedVehicle(vehicle);
+  };
+ 
   return (
     <div className="page-wrapper">
       <div className="simple-container">
@@ -53,7 +67,11 @@ function Home() {
         <FilterBar onFilter={handleFilter} />
         <div className="simple-cards">
           {vehicles.map((vehicle) => (
-            <VehicleListCard key={vehicle._id} vehicle={vehicle} onCopyUrl={handleCopyUrl} />
+            <VehicleListCard 
+            key={vehicle._id} 
+            vehicle={vehicle} 
+            onCopyUrl={handleCopyUrl} 
+            question={handleOpenQuestions}/>
           ))}
         </div>
         <div className="simple-pagination">
@@ -62,6 +80,14 @@ function Home() {
           <button disabled={page >= pages} onClick={() => setPage(page + 1)}>Next</button>
         </div>
       </div>
+
+      {/* CHAT: Modal al final (fuera del container para que quede encima) */}
+      {selectedVehicle && (
+        <QuestionModal
+          vehicle={selectedVehicle}
+          onClose={() => setSelectedVehicle(null)}
+        />
+      )}     
     </div>
   );
 }

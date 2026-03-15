@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../services/api";
-import VehicleForm from "../components/VehicleForm";
-import VehicleManageCard from "../components/VehicleManageCard";
+import VehicleForm from "../components/vehicle/VehicleForm";
+import VehicleManageCard from "../components/vehicle/VehicleManageCard";
+
 
 function EditVehicle() {
   const { id } = useParams(); // obtiene el id de la URL

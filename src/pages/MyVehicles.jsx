@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import VehicleManageCard from '../components/VehicleManageCard';
+import VehicleManageCard from '../components/vehicle/VehicleManageCard';
 import api from "../services/api";
 import { useNavigate } from 'react-router-dom';
+import QuestionModal from "../components/chat/QuestionModal";
 
 const MyVehicles = () => {
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(true);
   const token = sessionStorage.getItem('token');
   const navigate = useNavigate();
+
+  // Modal de preguntas
+  const [isOpenQuestions, setIsOpenQuestions] = useState(false);
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+
+  const openQuestions = (vehicle) => {
+    setSelectedVehicle(vehicle);
+    setIsOpenQuestions(true);
+  };
+
+  const closeQuestions = () => {
+    setIsOpenQuestions(false);
+    setSelectedVehicle(null);
+  };
 
   useEffect(() => {
     const fetchUserVehicles = async () => {
@@ -60,10 +75,14 @@ const MyVehicles = () => {
                   setVehicles(vehicles.map(v => v._id === vehicle._id ? { ...v, status: 'sold' } : v));
                   alert('Vehicle marked as sold');
                 }}
+                question={openQuestions}
               />
             ))}
           </div>
         </div>
+        {isOpenQuestions && selectedVehicle && (
+          <QuestionModal vehicle={selectedVehicle} onClose={closeQuestions} /> // Modal de preguntas
+        )}
       </div>
     );
 };
