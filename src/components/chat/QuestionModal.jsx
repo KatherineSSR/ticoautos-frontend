@@ -4,14 +4,7 @@ import ConversationThread from "./ConversationThread";
 import QuestionForm from "./QuestionForm";
 import AnswerForm from "./AnswerForm";
 import ThreadList from "./ThreadList";
-import {
-  appendAnswerToQuestion,
-  appendQuestion,
-  buildBuyerThreads,
-  getBuyerLabel,
-  getPendingQuestion,
-  getSelectedThread,
-  getVehicleTitle,
+import {appendAnswerToQuestion,appendQuestion,buildBuyerThreads,getBuyerLabel,getPendingQuestion,getSelectedThread,getVehicleTitle,
 } from "../../utils/questions";
 import styles from "../../styles/chat.module.css";
 

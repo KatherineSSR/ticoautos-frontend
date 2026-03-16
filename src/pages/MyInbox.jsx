@@ -3,14 +3,7 @@ import AnswerForm from "../components/chat/AnswerForm";
 import ConversationThread from "../components/chat/ConversationThread";
 import ThreadList from "../components/chat/ThreadList";
 import api from "../services/api";
-import {
-  appendAnswerToQuestion,
-  buildInboxThreads,
-  getBuyerLabel,
-  getPendingQuestion,
-  getSelectedThread,
-  getVehicleTitle,
-} from "../utils/questions";
+import {appendAnswerToQuestion,buildInboxThreads,getBuyerLabel,getPendingQuestion,getSelectedThread,getVehicleTitle,} from "../utils/questions";
 import styles from "../styles/chat.module.css";
 import "../styles/vehicle.css";
 

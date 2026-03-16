@@ -1,4 +1,4 @@
-// Returns the first unanswered question from a question list.
+// Funcion para obtener la primera pregunta sin respuesta de una lista de preguntas
 
 export function getPendingQuestion(questions = []) {
   return questions.find((q) => !(q.answers && q.answers.length > 0)) || null;

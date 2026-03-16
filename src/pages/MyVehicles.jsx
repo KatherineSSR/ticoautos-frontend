@@ -10,7 +10,7 @@ const MyVehicles = () => {
   const token = sessionStorage.getItem('token');
   const navigate = useNavigate();
 
-  // Modal de preguntas
+  // Questions modal
   const [isOpenQuestions, setIsOpenQuestions] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
 

@@ -3,12 +3,7 @@ import ConversationThread from "../components/chat/ConversationThread";
 import QuestionForm from "../components/chat/QuestionForm";
 import ThreadList from "../components/chat/ThreadList";
 import api from "../services/api";
-import {
-  appendQuestion,
-  buildQuestionThreads,
-  getPendingQuestion,
-  getSelectedThread,
-  getVehicleTitle,
+import {appendQuestion,buildQuestionThreads,getPendingQuestion,getSelectedThread,getVehicleTitle,
 } from "../utils/questions";
 import styles from "../styles/chat.module.css";
 import "../styles/vehicle.css";
