@@ -4,7 +4,6 @@ import '../../styles/vehicle.css';
 
 function VehicleForm({ initialData = {}, onSubmit, submitLabel }) {
   const navigate = useNavigate();
-  // Estados para cada campo, usando initialData para edición
   const [brand, setBrand] = useState(initialData.brand || "");
   const [model, setModel] = useState(initialData.model || "");
   const [year, setYear] = useState(initialData.year || "");
@@ -29,7 +28,6 @@ function VehicleForm({ initialData = {}, onSubmit, submitLabel }) {
     }
     if (image) formData.append("image", image);
 
-    // Llama la función onSubmit pasada por props
     try {
       await onSubmit(formData);
       alert("Operation successful");

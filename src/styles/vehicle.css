@@ -109,7 +109,6 @@ body {
   margin-top: 32px;
 }
 
-/* Mantengo SOLO UNA definición de .simple-card (la más completa) */
 .simple-card {
   background: #000000;
   border-radius: 16px;
@@ -206,7 +205,7 @@ body {
   color: #bbb;
 }
 
-/* FORMULARIO ESTILO REGISTRO */
+
 .simple-form-wrapper {
   background-color: #161515;
   display: flex;

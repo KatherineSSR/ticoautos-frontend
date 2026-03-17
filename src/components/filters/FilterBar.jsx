@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
 import '../../styles/vehicle.css';
 
+const initialFilters = {
+  brand: '',
+  model: '',
+  minYear: '',
+  maxYear: '',
+  minPrice: '',
+  maxPrice: '',
+  status: '',
+};
+//Filters guarda los valores actuales de los filtros. InicialFilters son los filtros vacios y con set filters se actualizan
 const FilterBar = ({ onFilter }) => {
-  const [filters, setFilters] = useState({
-    brand: '',
-    model: '',
-    minYear: '',
-    maxYear: '',
-    minPrice: '',
-    maxPrice: '',
-    status: '',
-  });
+  const [filters, setFilters] = useState(initialFilters);
 
+  //extraae los valores de los inputs por name y value y los guarda en el estado de filtros
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
   };
 
+  //envia los filtros al componente padre (Home) para que ejecute la consulta con esos filtros
   const handleSubmit = (e) => {
     e.preventDefault();
     onFilter(filters);
+  };
+
+  //limpia filtros y recarga la lista sin filtros
+  const handleClear = () => {
+    setFilters(initialFilters);
+    onFilter(initialFilters);
   };
 
   return (
@@ -37,6 +47,7 @@ const FilterBar = ({ onFilter }) => {
           <option value="sold">Sold</option>
         </select>
         <button type="submit">Filter</button>
+        <button type="button" onClick={handleClear} >Clear</button>
       </form>
     </div>
   );

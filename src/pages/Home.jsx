@@ -39,7 +39,7 @@ function Home() {
   }, [filters, page]);
 
   const handleFilter = (newFilters) => {
-    setFilters(newFilters);
+    setFilters({ ...newFilters });
     setPage(1);
   };
 
@@ -58,7 +58,7 @@ function Home() {
     }
     setSelectedVehicle(vehicle);
   };
- 
+
   return (
     <div className="page-wrapper">
       <div className="simple-container">

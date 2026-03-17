@@ -1,5 +1,5 @@
 
-const VehicleManageCard = ({ vehicle, onEdit, onDelete, onMarkSold }) => (
+const VehicleManageCard = ({ vehicle, onEdit, onDelete, onMarkSold, question }) => (
     <div className="simple-card">
       <img src={vehicle.image ? `http://localhost:3000/uploads/${vehicle.image}` : '/default-car.png'} alt="auto" />
       
@@ -13,6 +13,7 @@ const VehicleManageCard = ({ vehicle, onEdit, onDelete, onMarkSold }) => (
         {vehicle.status === 'available' && (
           <button onClick={() => onMarkSold(vehicle)}>Mark as sold</button>
         )}
+        <button onClick={() => question(vehicle)}>Question</button>
       </div>
     </div>
 );

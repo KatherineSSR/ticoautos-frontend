@@ -20,7 +20,6 @@ function VehicleDetail() {
       });
   }, [id]);
 
-    // Set page background color (always called)
     useEffect(() => {
       document.body.style.background = '#161515';
       return () => {
