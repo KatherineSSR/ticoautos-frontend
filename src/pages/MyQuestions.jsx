@@ -50,7 +50,6 @@ export default function MyQuestions() {
       <div className={styles.pageShell}>
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>My Questions</h1>
-          <p className={styles.pageSubtitle}>All the questions you have asked on vehicles.</p>
         </div>
 
         {loading ? <p className={styles.muted}>Loading...</p> : null}

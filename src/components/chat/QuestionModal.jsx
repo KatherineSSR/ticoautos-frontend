@@ -68,11 +68,6 @@ export default function QuestionModal({ vehicle, onClose }) {
     <div className={styles.overlay} onMouseDown={onClose}>
       <div className={styles.modal} onMouseDown={(e) => e.stopPropagation()}>
         <div className={styles.modalHeader}>
-          <div>
-            <h2 className={styles.modalTitle}>Q&amp;A</h2>
-            <p className={styles.modalSubtitle}>{getVehicleTitle(vehicle)}</p>
-          </div>
-
           <button onClick={onClose} className={styles.closeBtn}>
             Close
           </button>

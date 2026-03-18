@@ -49,7 +49,6 @@ export default function MyInbox() {
       <div className={styles.pageShell}>
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>My Inbox</h1>
-          <p className={styles.pageSubtitle}>All questions across all your vehicles.</p>
         </div>
 
         {loading ? <p className={styles.muted}>Loading...</p> : null}
